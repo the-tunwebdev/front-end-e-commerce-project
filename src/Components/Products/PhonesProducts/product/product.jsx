@@ -5,7 +5,7 @@ import useStyles from './styles'
 
 function Product({product}) {
     const classes= useStyles()
-    // comment
+    
     
     return (
         <Card className={classes.root}>
