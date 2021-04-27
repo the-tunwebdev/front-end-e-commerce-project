@@ -3,6 +3,7 @@ import {commerce} from '../../../lib/commerce'
 import PhonesProduct from './PhonesProduct'
 function PhonesHome({AddToCart}) {
     const [products,setProducts]= useState([])
+    // fetchng and filtering data 
     
     const fectchdata= async()=>{
         const {data} = await commerce.products.list()

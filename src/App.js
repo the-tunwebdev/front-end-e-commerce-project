@@ -16,11 +16,13 @@ import {commerce} from './lib/commerce'
 
 function App() {
   const [cart,setCart]= useState({})
+  // fetch the cart item
 
   const fetchCart=async()=>{
     const cart= await commerce.cart.retrieve()
     setCart(cart)
   }
+  // add to cart
   const AddToCart= async(productId,quantity)=>{
     const item= await commerce.cart.add(productId,quantity)
     setCart(item.cart)
