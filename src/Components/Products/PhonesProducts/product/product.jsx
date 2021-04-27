@@ -1,15 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Card,CardMedia,CardContent,CardActions,Typography,IconButton} from '@material-ui/core'
 import {AddShoppingCart} from '@material-ui/icons'
 import useStyles from './styles'
 
-function Product({product}) {
+function Product({product,AddToCart}) {
     const classes= useStyles()
+    const [srcImage,setsrcImage]= useState(product.assets[0].url)
+    // console.log(product)
     
     
     return (
         <Card className={classes.root}>
-            <CardMedia   title={product.name}><img src={product.media.source} width='150px' alt=""/></CardMedia>
+            <CardMedia   title={product.name}><img src={srcImage}  width='150px' alt="" onMouseEnter={()=>setsrcImage(product.assets[1].url)}
+                onMouseLeave={()=>setsrcImage(product.assets[0].url)}
+            /></CardMedia>
             <CardContent>
                 <div className={classes.cardContent}>
                     <Typography variant="h5" gutterBottom>
@@ -26,8 +30,8 @@ function Product({product}) {
 
             </CardContent> 
             <CardActions disableSpacing className={classes.cardActions}>
-                <IconButton aria-label="Add to cart">
-                    <AddShoppingCart/>
+                <IconButton aria-label="Add to cart" onClick={()=>AddToCart(product.id,1)}> 
+                    <AddShoppingCart />
                 </IconButton>
             </CardActions>
 
