@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Cart from './Components/Cart/Cart'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +9,7 @@ import {
   Link
 } from "react-router-dom";
 
-import PhonesProduct from './Components/Products/PhonesProducts/PhonesProduct';
+
 import Header from './Header/Header';
 import PhonesHome from './Components/Products/PhonesProducts/PhonesHome';
 import {commerce} from './lib/commerce'
@@ -32,7 +32,19 @@ function App() {
 
   },[])
   console.log(cart)
-  
+  const handleUpdateCartQuantity=async(productId,quantity)=>{
+    const response = await commerce.cart.update(productId,{quantity});
+    setCart(response.cart)
+  }
+  const handleRemoveFromCart=async(productId)=>{
+    const response = await commerce.cart.remove(productId)
+    setCart(response.cart)
+
+  }
+  const handleEmptyCart=async()=>{
+    const response = await commerce.cart.empty()
+    setCart(response.cart)
+  }
 
   return (
     <div className="App">
@@ -41,6 +53,11 @@ function App() {
         <Header totalItems={cart.total_items} />
          <Switch>
             <Route path='/phones' ><PhonesHome AddToCart={AddToCart} /></Route>
+            <Route path='/cart'><Cart cart={cart} 
+            handleUpdateCartQuantity={handleUpdateCartQuantity} 
+            handleRemoveFromCart={handleRemoveFromCart}
+            handleEmptyCart={handleEmptyCart}
+            /></Route>
             
             <Route exact path='/' component={()=><h1>hello</h1>} />
             

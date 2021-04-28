@@ -2,22 +2,39 @@ import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import {
     BrowserRouter as Router,
+    useHistory,
     Link
   } from "react-router-dom";
 import {IconButton,Badge} from '@material-ui/core'
 import {ShoppingCart} from '@material-ui/icons'
 import useStyles from './styles'
 const NavBar = ({totalItems}) => {
+    let history =useHistory()
     const classes = useStyles()
     return(
         <div className="App">
                 <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="danger" variant="dark">
-            <ReactBootStrap.Navbar.Brand href="/"> Ecommerce</ReactBootStrap.Navbar.Brand>
-            <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+                    <div className={classes.button}>
+                        <IconButton aria-label="Show cart products" color='inherit' onClick={()=>history.push('/cart')}>    
+                            <Badge badgeContent={totalItems} color='secondary'>
+                                <ShoppingCart />
+                            </Badge>
+
+                        </IconButton>
+                </div>
+                <Link to='/'>
+                  <ReactBootStrap.Navbar.Brand > Ecommerce</ReactBootStrap.Navbar.Brand>
+                </Link>  
+                  
+            
+                <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
                 <ReactBootStrap.Nav className="mr-auto"> 
+                <Link to="/phones">
+                    <ReactBootStrap.Nav.Link href="/Phones">Phones</ReactBootStrap.Nav.Link>
+
+                </Link>
                 
-                <ReactBootStrap.Nav.Link href="/Phones">Phones</ReactBootStrap.Nav.Link>
                 
                 
                 <ReactBootStrap.Nav.Link href="#Pc">Pc</ReactBootStrap.Nav.Link>
@@ -31,14 +48,7 @@ const NavBar = ({totalItems}) => {
                 </ReactBootStrap.NavDropdown> */}
                 </ReactBootStrap.Nav>
                 <ReactBootStrap.Nav>
-                <div className={classes.button}>
-                        <IconButton aria-label="Show cart products" color='inherit'>    
-                            <Badge badgeContent={totalItems} color='secondary'>
-                                <ShoppingCart />
-                            </Badge>
-
-                        </IconButton>
-                </div>
+                
                 </ReactBootStrap.Nav>
             </ReactBootStrap.Navbar.Collapse>
             </ReactBootStrap.Navbar>
