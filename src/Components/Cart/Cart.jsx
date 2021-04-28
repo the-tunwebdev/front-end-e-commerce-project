@@ -26,7 +26,7 @@ function Cart({cart,handleUpdateCartQuantity,handleRemoveFromCart,handleEmptyCar
 
           </Grid>
           <div className={classes.cardDetails}>
-              <Typography variant="h4">
+              <Typography variant="h5">
                   Subtotal :{cart.subtotal.formatted_with_symbol}
 
               </Typography>

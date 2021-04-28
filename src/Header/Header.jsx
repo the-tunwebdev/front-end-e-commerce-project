@@ -23,7 +23,7 @@ const NavBar = ({totalItems}) => {
                         </IconButton>
                 </div>
                 <Link to='/'>
-                  <ReactBootStrap.Navbar.Brand > Ecommerce</ReactBootStrap.Navbar.Brand>
+                  <ReactBootStrap.Navbar.Brand > Home</ReactBootStrap.Navbar.Brand>
                 </Link>  
                   
             
@@ -34,10 +34,17 @@ const NavBar = ({totalItems}) => {
                     <ReactBootStrap.Nav.Link href="/Phones">Phones</ReactBootStrap.Nav.Link>
 
                 </Link>
+                <Link to="/pc">
+                    <ReactBootStrap.Nav.Link href="/pc">Pc</ReactBootStrap.Nav.Link>
+
+                </Link>
+                <Link to="/acess">
+                    <ReactBootStrap.Nav.Link href="/acess">Accessories</ReactBootStrap.Nav.Link>
+
+                </Link>
                 
                 
                 
-                <ReactBootStrap.Nav.Link href="#Pc">Pc</ReactBootStrap.Nav.Link>
                 
                 {/* <ReactBootStrap.NavDropdown title="YEET" id="collasible-nav-dropdown">
                     <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>

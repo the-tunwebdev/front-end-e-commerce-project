@@ -1,31 +1,58 @@
+
 import React from 'react';
 import './home.scss'
 
-const HomePage = () => (
-  <div className='homepage'>
-    <h1>Welcome to my Homepage</h1>
-    <div className='directory-menu'>
-      <div className='menu-item'>
-        <div className='content'>
-          <div className='title'>Phones</div>
-          <span className='subtitle'>SHOP NOW</span>
+import HomeComponent from './HomeSingleComponent/HomeComponent';
+const HomePage = () => {
+    const HomeData=[
+        {
+        path:'/phones',
+        content:'Phones',
+        image:'https://cdn.mos.cms.futurecdn.net/gi4ofLVzjTvrTAjJCbLC53.jpg',
+        id:'1'
+    },
+    {
+        path:'/pc',
+        content:'Pc',
+        image:'',
+        id:'2'
+    },
+    {
+        path:'/acess',
+        content:'Accessories',
+        
+        id:'3'
+    }
+    
+]
+
+    return(
+        <div className='homepage'>
+            <div className='directory-menu'>
+                
+                    {
+                        
+                        HomeData.map(data=>(
+                            <HomeComponent key={data.id} path={data.path} content={data.content} />
+                        ))
+                    
+                    }
+                
+            </div>
+            
+
         </div>
-      </div>
-     
-      <div className='menu-item'>
-        <div className='content'>
-          <div className='title'>Pc</div>
-          <span className='subtitle'>SHOP NOW</span>
-        </div>
-      </div>
-      <div className='menu-item'>
-        <div className='content'>
-          <div className='title'>Accessories</div>
-          <span className='subtitle'>SHOP NOW</span>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+            
+    
+    
+            
+                
+            
+           
+       
+
+    )
+  
+};
 
 export default HomePage;

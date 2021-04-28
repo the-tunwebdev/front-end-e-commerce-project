@@ -1,0 +1,22 @@
+export const SliderData = [
+    {
+      image:
+        'https://img.bfmtv.com/images/352/1e452b75f56c15f03bfd894bf332a.jpg'
+    },
+    {
+      image:
+        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-watch-6s-202009?wid=600&hei=315&fmt=jpeg&qlt=95&.v=1599936770000'
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZtz2lWR-xfH1XOWahjKsZ3tWqHt2szf50g&usqp=CAU'
+    },
+    {
+      image:
+        'https://zdnet3.cbsistatic.com/hub/i/r/2021/01/14/9af61f69-ff58-4943-80f4-afb642305138/resize/1200xauto/df1de31bcab0562ceddbb9f0647228c7/asus-screenpad-tilt.png'
+    },
+    {
+      image:
+        'https://www.presse-citron.net/app/uploads/2021/01/galaxy-s21-violet-design.jpg'
+    }
+  ];

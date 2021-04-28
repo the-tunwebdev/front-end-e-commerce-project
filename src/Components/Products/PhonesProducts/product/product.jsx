@@ -11,7 +11,7 @@ function Product({product,AddToCart}) {
     
     return (
         <Card className={classes.root}>
-            <CardMedia   title={product.name}><img src={srcImage}  width='150px' alt="" onMouseEnter={()=>setsrcImage(product.assets[1].url)}
+            <CardMedia   title={product.name}><img style={{display:'block',marginLeft:'auto',marginRight:'auto'}} src={srcImage}  width='150px' alt="" onMouseEnter={()=>setsrcImage(product.assets[1].url)}
                 onMouseLeave={()=>setsrcImage(product.assets[0].url)}
             /></CardMedia>
             <CardContent>
