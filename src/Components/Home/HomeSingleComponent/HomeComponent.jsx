@@ -6,14 +6,14 @@ import {
     Link
 } from "react-router-dom";
 import './home.scss'
-function HomeComponent({path,content}) {
+function HomeComponent({path,content,image}) {
     return (
-           <div className='menu-item'>
+           <div className='menu-item' style={{backgroundImage:`url(${image})`}}>
             
                 <Link to={path} style={{textDecoration:'none',color:'black'}}>
                     <div className='content'>
-                    <div className='title'>{content}s</div>
-                    <span className='subtitle'>SHOP NOW</span>
+                        <div className='title'>{content}</div>
+                        <span className='subtitle'>SHOP NOW</span>
                     </div>
                 </Link>
                 

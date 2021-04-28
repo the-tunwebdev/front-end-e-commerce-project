@@ -22,10 +22,8 @@
     border: 1px solid black;
     margin: 0 7.5px 15px;
     
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-position: center;
+     background-size: cover;
   
     &:first-child {
       margin-right: 7.5px;
@@ -43,6 +41,7 @@
       align-items: center;
       justify-content: center;
       border: 1px solid black;
+      background: grey;
   
       .title {
         font-weight: bold;
