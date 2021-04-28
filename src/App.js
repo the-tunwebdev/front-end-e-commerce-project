@@ -13,6 +13,7 @@ import {
 import Header from './Header/Header';
 import PhonesHome from './Components/Products/PhonesProducts/PhonesHome';
 import {commerce} from './lib/commerce'
+import HomePage from './Components/Home/Home';
 
 function App() {
   const [cart,setCart]= useState({})
@@ -59,7 +60,7 @@ function App() {
             handleEmptyCart={handleEmptyCart}
             /></Route>
             
-            <Route exact path='/' component={()=><h1>hello</h1>} />
+            <Route exact path='/'><HomePage /></Route>
             
          </Switch>
 
