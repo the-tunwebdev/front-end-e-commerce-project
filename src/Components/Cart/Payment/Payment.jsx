@@ -14,7 +14,10 @@ function Payment({price,cart}) {
     const priceForStripe= price*100
     const onToken=(token)=>{
         if(token.object==='token'){
-            commerce.cart.empty()
+            alert('payment work')
+            // console.log(commerce.ccart.refresh.line_items)
+            // return commerce.cart.refresh()
+            
             window.location.replace('/')
 
         }
